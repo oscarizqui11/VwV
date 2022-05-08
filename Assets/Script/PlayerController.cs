@@ -39,13 +39,19 @@ public class PlayerController : MonoBehaviour
             //_anim.SetBool("IsWalking", true);
             //_mv.RotateDirection(direction.normalized, spriteRotation);
             _sprt.flipX = false;
+            _anim.SetBool("Walking", true);
 
         }
         else if(hor < -0.1)
         {
             _sprt.flipX = true;
+            _anim.SetBool("Walking", true);
             //_anim.SetInteger("State", 0);
             //_anim.SetBool("IsWalking", false);
+        }
+        else
+        {
+            _anim.SetBool("Walking", false);
         }
 
         if(jump)
