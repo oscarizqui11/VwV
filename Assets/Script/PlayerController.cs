@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _sprt;
     private MovementBehaviour _mv;
     private Rigidbody2D _rb2d;
+    private RespawnBehaviour _respawn;
     private static Camera mainCamera;
 
     public Vector3 direction;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
         _sprt = GetComponent<SpriteRenderer>();
         _mv = GetComponent<MovementBehaviour>();
         _rb2d = GetComponent<Rigidbody2D>();
+        _respawn = GetComponent<RespawnBehaviour>();
         mainCamera = Camera.main;
     }
 
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
         float hor = Input.GetAxisRaw("Horizontal");
         float ver = Input.GetAxisRaw("Vertical");
         bool jump = Input.GetButtonDown("Jump");
+        bool fire = Input.GetButtonDown("Fire1");
         direction = new Vector3(hor, 0);
 
         if (hor > 0.1)
@@ -73,6 +76,15 @@ public class PlayerController : MonoBehaviour
         if(jump)
         {
             _anim.SetTrigger("Flip");
+        }
+
+        if (fire)
+        {
+            _respawn.Respawn();
+            if(_rb2d.gravityScale < 0)
+            {
+                _rb2d.gravityScale = -_rb2d.gravityScale;
+            }
         }
 
     }
