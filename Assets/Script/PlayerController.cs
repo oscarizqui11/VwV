@@ -65,17 +65,18 @@ public class PlayerController : MonoBehaviour
         if(_rb2d.gravityScale >= 0)
         {
             //_anim.SetTrigger("Flip");
-            _sprt.flipY = false;
+            //_sprt.flipY = false;
         }
         else if(_rb2d.gravityScale < 0)
         {
             //_anim.SetTrigger("Flip");
-            _sprt.flipY = true;
+            //_sprt.flipY = true;
         }
 
         if(jump)
         {
             _anim.SetTrigger("Flip");
+            _rb2d.transform.Rotate(new Vector3(180, 0, 0));
         }
 
         if (fire)
