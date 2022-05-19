@@ -1261,9 +1261,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_0
       rect:
         serializedVersion: 2
-        x: 21
+        x: 15
         y: 970
-        width: 18
+        width: 30
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1282,9 +1282,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_1
       rect:
         serializedVersion: 2
-        x: 85
+        x: 79
         y: 970
-        width: 18
+        width: 30
         height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1303,9 +1303,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_2
       rect:
         serializedVersion: 2
-        x: 149
+        x: 143
         y: 970
-        width: 18
+        width: 30
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1324,9 +1324,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_3
       rect:
         serializedVersion: 2
-        x: 213
+        x: 207
         y: 970
-        width: 18
+        width: 30
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1471,9 +1471,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_10
       rect:
         serializedVersion: 2
-        x: 21
+        x: 15
         y: 906
-        width: 18
+        width: 30
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1492,9 +1492,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_11
       rect:
         serializedVersion: 2
-        x: 85
+        x: 79
         y: 906
-        width: 18
+        width: 30
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1513,9 +1513,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_12
       rect:
         serializedVersion: 2
-        x: 150
+        x: 144
         y: 906
-        width: 17
+        width: 29
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1534,9 +1534,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_13
       rect:
         serializedVersion: 2
-        x: 214
+        x: 208
         y: 906
-        width: 17
+        width: 29
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1555,9 +1555,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_14
       rect:
         serializedVersion: 2
-        x: 277
+        x: 271
         y: 906
-        width: 18
+        width: 30
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1576,9 +1576,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_15
       rect:
         serializedVersion: 2
-        x: 342
+        x: 336
         y: 906
-        width: 17
+        width: 29
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1597,9 +1597,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_16
       rect:
         serializedVersion: 2
-        x: 406
+        x: 400
         y: 906
-        width: 17
+        width: 29
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1618,9 +1618,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_17
       rect:
         serializedVersion: 2
-        x: 469
+        x: 463
         y: 906
-        width: 18
+        width: 30
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1828,12 +1828,12 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_27
       rect:
         serializedVersion: 2
-        x: 149
+        x: 143
         y: 843
-        width: 17
+        width: 29
         height: 30
-      alignment: 9
-      pivot: {x: 0.55933875, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1849,9 +1849,9 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_28
       rect:
         serializedVersion: 2
-        x: 215
+        x: 208
         y: 843
-        width: 15
+        width: 29
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2479,10 +2479,10 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_58
       rect:
         serializedVersion: 2
-        x: 275
-        y: 783
-        width: 26
-        height: 23
+        x: 272
+        y: 780
+        width: 30
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2500,10 +2500,10 @@ TextureImporter:
       name: sprite_base_addon_2012_12_14_59
       rect:
         serializedVersion: 2
-        x: 341
-        y: 780
-        width: 22
-        height: 26
+        x: 337
+        y: 778
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
