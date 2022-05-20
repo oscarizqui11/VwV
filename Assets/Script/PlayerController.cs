@@ -11,10 +11,16 @@ public class PlayerController : MonoBehaviour
     private MovementBehaviour _mv;
     private Rigidbody2D _rb2d;
     private RespawnBehaviour _respawn;
+    public GameObject _collectables;
     private static Camera mainCamera;
 
     public Vector3 direction;
     private Vector3 cameraDir;
+
+    public GameObject collidingPLatform;
+
+    public bool onPlatform;
+    public Vector3 platformDir;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,6 +31,7 @@ public class PlayerController : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _respawn = GetComponent<RespawnBehaviour>();
         mainCamera = Camera.main;
+        onPlatform = false;
     }
 
     // Update is called once per frame
@@ -34,7 +41,7 @@ public class PlayerController : MonoBehaviour
         float ver = Input.GetAxisRaw("Vertical");
         bool jump = Input.GetButtonDown("Jump");
         bool fire = Input.GetButtonDown("Fire1");
-        direction = new Vector3(hor, 0);
+        UpdateDirection(new Vector3(hor, 0));
 
         if (hor > 0.1)
         {
@@ -62,17 +69,6 @@ public class PlayerController : MonoBehaviour
             _rb2d.gravityScale = -_rb2d.gravityScale;
         }
 
-        if(_rb2d.gravityScale >= 0)
-        {
-            //_anim.SetTrigger("Flip");
-            //_sprt.flipY = false;
-        }
-        else if(_rb2d.gravityScale < 0)
-        {
-            //_anim.SetTrigger("Flip");
-            //_sprt.flipY = true;
-        }
-
         if(jump)
         {
             _anim.SetTrigger("Flip");
@@ -88,10 +84,27 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if(!_collectables.GetComponentInChildren<CollectablesController>())
+        {
+            Debug.Log("Game Over");
+        }
+
     }
 
     private void FixedUpdate()
     {
         _mv.MoveRB(direction.normalized);
+    }
+
+    public void UpdateDirection(Vector3 dirUpdate)
+    {
+        if(!collidingPLatform)
+        {
+            direction = new Vector3(dirUpdate.x + platformDir.x, dirUpdate.y + platformDir.y);
+        }
+        else
+        {
+            direction = new Vector3(dirUpdate.x + platformDir.x, dirUpdate.y + platformDir.y);
+        }
     }
 }
