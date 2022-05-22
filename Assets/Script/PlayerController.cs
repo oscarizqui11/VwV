@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using System;
+
 public class PlayerController : MonoBehaviour
 {
     public int spriteRotation;
@@ -17,6 +19,9 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 direction;
     private Vector3 cameraDir;
+
+    public delegate void Tests();
+    public static event Tests gameOver;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,9 +46,6 @@ public class PlayerController : MonoBehaviour
 
         if (hor > 0.1)
         {
-            //_anim.SetInteger("State", 1);
-            //_anim.SetBool("IsWalking", true);
-            //_mv.RotateDirection(direction.normalized, spriteRotation);
             _sprt.flipX = false;
             _anim.SetBool("Walking", true);
 
@@ -52,8 +54,6 @@ public class PlayerController : MonoBehaviour
         {
             _sprt.flipX = true;
             _anim.SetBool("Walking", true);
-            //_anim.SetInteger("State", 0);
-            //_anim.SetBool("IsWalking", false);
         }
         else
         {
@@ -83,9 +83,11 @@ public class PlayerController : MonoBehaviour
 
         if(!_collectables.GetComponentInChildren<CollectablesController>())
         {
-            Debug.Log("Game Over");
+            if(gameOver != null)
+            {
+                gameOver();
+            }
         }
-
     }
 
     private void FixedUpdate()
