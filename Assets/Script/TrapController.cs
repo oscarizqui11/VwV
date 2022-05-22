@@ -9,6 +9,7 @@ public class TrapController : MonoBehaviour
         if(TryGetComponent<CompositeCollider2D>(out CompositeCollider2D compositeCol) && compositeCol.IsTouching(collision))
         {
             collision.GetComponent<RespawnBehaviour>().Respawn();
+            GetComponent<PlayFxOnHit>().PlayFX();
         }
     }
 
@@ -17,6 +18,7 @@ public class TrapController : MonoBehaviour
         if(collision.transform.tag == "Player")
         {
             collision.transform.GetComponent<RespawnBehaviour>().Respawn();
+            GetComponent<PlayFxOnHit>().PlayFX();
         }
     }
 }

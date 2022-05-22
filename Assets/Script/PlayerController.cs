@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rb2d;
     private RespawnBehaviour _respawn;
     public GameObject _collectables;
+    private AudioSource _audS;
     private static Camera mainCamera;
 
     public Vector3 direction;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         _mv = GetComponent<MovementBehaviour>();
         _rb2d = GetComponent<Rigidbody2D>();
         _respawn = GetComponent<RespawnBehaviour>();
+        _audS = GetComponent<AudioSource>();
         mainCamera = Camera.main;
     }
 
@@ -65,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
         if(jump)
         {
+            _audS.Play();
             _anim.SetTrigger("Flip");
             _rb2d.transform.Rotate(new Vector3(180, 0, 0));
         }

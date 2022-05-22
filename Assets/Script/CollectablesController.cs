@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class CollectablesController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioClip fruitSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioSource.PlayClipAtPoint(fruitSound, transform.position);
         Destroy(gameObject);
     }
 }
