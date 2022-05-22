@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class TrapController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
+        if(TryGetComponent<CompositeCollider2D>(out CompositeCollider2D compositeCol) && compositeCol.IsTouching(collision))
+        {
+            collision.GetComponent<RespawnBehaviour>().Respawn();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        collision.GetComponent<RespawnBehaviour>().Respawn();
+        if(collision.transform.tag == "Player")
+        {
+            collision.transform.GetComponent<RespawnBehaviour>().Respawn();
+        }
     }
 }

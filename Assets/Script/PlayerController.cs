@@ -17,11 +17,6 @@ public class PlayerController : MonoBehaviour
     public Vector3 direction;
     private Vector3 cameraDir;
 
-    public GameObject collidingPLatform;
-
-    public bool onPlatform;
-    public Vector3 platformDir;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,7 +26,6 @@ public class PlayerController : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _respawn = GetComponent<RespawnBehaviour>();
         mainCamera = Camera.main;
-        onPlatform = false;
     }
 
     // Update is called once per frame
@@ -41,7 +35,7 @@ public class PlayerController : MonoBehaviour
         float ver = Input.GetAxisRaw("Vertical");
         bool jump = Input.GetButtonDown("Jump");
         bool fire = Input.GetButtonDown("Fire1");
-        UpdateDirection(new Vector3(hor, 0));
+        direction = new Vector3(hor, 0);
 
         if (hor > 0.1)
         {
@@ -96,15 +90,19 @@ public class PlayerController : MonoBehaviour
         _mv.MoveRB(direction.normalized);
     }
 
-    public void UpdateDirection(Vector3 dirUpdate)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collidingPLatform)
+        if(collision.transform.tag == "Ground")
         {
-            direction = new Vector3(dirUpdate.x + platformDir.x, dirUpdate.y + platformDir.y);
+            _anim.SetBool("Falling", false);
         }
-        else
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "Ground")
         {
-            direction = new Vector3(dirUpdate.x + platformDir.x, dirUpdate.y + platformDir.y);
+            _anim.SetBool("Falling", true);
         }
     }
 }
