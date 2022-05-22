@@ -11,7 +11,6 @@ public class AppController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
         }
         if(Input.GetKeyDown(KeyCode.R))
