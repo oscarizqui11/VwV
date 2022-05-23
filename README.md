@@ -4,7 +4,7 @@
  
  # Controls:
  
- Move: W, A, S, D
- Flip Gravity: Space
- Restart: R
- Quit: Escape
+ Move: W, A, S, D -m
+ Flip Gravity: Space -m
+ Restart: R -m
+ Quit: Escape -m
