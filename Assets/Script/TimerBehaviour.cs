@@ -37,7 +37,10 @@ public class TimerBehaviour : MonoBehaviour
     {
         if(!_evmg.GetGameOver())
         {
-            timeLimit = timeLimit + Time.fixedDeltaTime;        
+            timeLimit = timeLimit + Time.fixedDeltaTime; 
+        }
+        else{
+            GetComponent<CanvasGroup>().alpha = 1;
         }
     }
 }
