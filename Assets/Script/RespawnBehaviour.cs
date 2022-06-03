@@ -14,6 +14,8 @@ public class RespawnBehaviour : MonoBehaviour
     {
         _sprt = GetComponent<SpriteRenderer>();
         _rb2d = GetComponent<Rigidbody2D>();
+
+        Respawn();
     }
 
     public void SetCheckPoint(Transform newCheckPoint)
