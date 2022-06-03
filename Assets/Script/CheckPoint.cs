@@ -14,17 +14,6 @@ public class CheckPoint : MonoBehaviour
     {
         _anim = GetComponent<Animator>();
         _audS = GetComponent<AudioSource>();
-
-        Transform respawnCheckPoint = FindObjectOfType<RespawnBehaviour>().checkPoint;
-
-        if(respawnCheckPoint == transform)
-        {
-            if (respawnCheckPoint.name != "Initial Spawn")
-            {
-                respawnCheckPoint.GetComponent<Animator>().SetLayerWeight(1, 0);
-            }
-            _anim.SetLayerWeight(1, 1);
-        }
     }
 
     // Update is called once per frame
