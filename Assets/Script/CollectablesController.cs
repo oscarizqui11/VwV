@@ -9,6 +9,6 @@ public class CollectablesController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         AudioSource.PlayClipAtPoint(fruitSound, transform.position);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

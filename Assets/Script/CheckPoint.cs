@@ -22,8 +22,8 @@ public class CheckPoint : MonoBehaviour
             if (respawnCheckPoint.name != "Initial Spawn")
             {
                 respawnCheckPoint.GetComponent<Animator>().SetLayerWeight(1, 0);
+                _anim.SetLayerWeight(1, 1);
             }
-            _anim.SetLayerWeight(1, 1);
         }
     }
 
