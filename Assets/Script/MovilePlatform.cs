@@ -28,7 +28,7 @@ public class MovilePlatform : MonoBehaviour
     {
         if (!IsPositionReached())
         {
-            _mv.MoveRB(nextPointDir.normalized);
+            _mv.MoveTowards(nextPointDir.normalized);
         }
         else
         {

@@ -569,6 +569,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5888072284483638150, guid: 0761593e9a9474144a204e2af99b1171, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5888072284483638151, guid: 0761593e9a9474144a204e2af99b1171, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -27388,6 +27392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_cat
       objectReference: {fileID: 0}
+    - target: {fileID: 4507631358625893704, guid: 1bb175418cd588f4db98297397a5624c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507631358625893706, guid: 1bb175418cd588f4db98297397a5624c, type: 3}
       propertyPath: velocity
       value: 1.8
@@ -27402,11 +27410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4507631358625893708, guid: 1bb175418cd588f4db98297397a5624c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.12
+      value: -2.144
       objectReference: {fileID: 0}
     - target: {fileID: 4507631358625893708, guid: 1bb175418cd588f4db98297397a5624c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.65
+      value: -0.693
       objectReference: {fileID: 0}
     - target: {fileID: 4507631358625893708, guid: 1bb175418cd588f4db98297397a5624c, type: 3}
       propertyPath: m_LocalPosition.z

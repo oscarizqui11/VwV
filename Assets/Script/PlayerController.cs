@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         float ver = Input.GetAxisRaw("Vertical");
         bool jump = Input.GetButtonDown("Jump");
         bool fire = Input.GetButtonDown("Fire1");
-        direction = new Vector3(hor, 0);
+        direction = new Vector3(hor * _mv.velocity, 0);
 
         if (hor > 0.1)
         {
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _mv.MoveRB(direction.normalized);
+        _mv.MoveVelocity(direction);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -8,7 +8,7 @@ public class StickySurface : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().transform.SetParent(transform);
+            collision.gameObject.transform.SetParent(transform);
         }
     }
 
@@ -16,16 +16,7 @@ public class StickySurface : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().transform.SetParent(null);
+            collision.gameObject.transform.SetParent(null);
         }
     }
-
-    /*private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("Wiiiiii!");
-            collision.gameObject.GetComponent<MovementBehaviour>().MoveRB(collision.transform.position + GetComponent<MovementBehaviour>().velocity * Time.fixedDeltaTime * GetComponent<MovilePlatform>().nextPointDir.normalized);
-        }
-    }*/
 }
