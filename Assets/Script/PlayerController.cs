@@ -72,14 +72,14 @@ public class PlayerController : MonoBehaviour
             _rb2d.transform.Rotate(new Vector3(180, 0, 0));
         }
 
-        if (fire)
+        /*if (fire)
         {
             _respawn.Respawn();
             if(_rb2d.gravityScale < 0)
             {
                 _rb2d.gravityScale = -_rb2d.gravityScale;
             }
-        }
+        }*/
 
         if(!_collectables.GetComponentInChildren<CollectablesController>())
         {
