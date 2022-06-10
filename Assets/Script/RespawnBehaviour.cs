@@ -13,7 +13,18 @@ public class RespawnBehaviour : MonoBehaviour
     void Start()
     {
         _sprt = GetComponent<SpriteRenderer>();
-        _rb2d = GetComponent<Rigidbody2D>();
+        _rb2d = GetComponent<Rigidbody2D>();       
+
+        if (StateDataController.checkpoint != null || StateDataController.checkpoint == "")
+        {
+            Debug.Log(StateDataController.checkpoint);
+            checkPoint = GameObject.Find(StateDataController.checkpoint).GetComponent<Transform>();
+        }
+        else
+        {
+            StateDataController.checkpoint = "Initial Sapwn";
+            checkPoint = GameObject.Find("Initial Spawn").GetComponent<Transform>();
+        }
 
         Respawn();
     }
@@ -21,6 +32,7 @@ public class RespawnBehaviour : MonoBehaviour
     public void SetCheckPoint(Transform newCheckPoint)
     {
         checkPoint = newCheckPoint;
+        StateDataController.checkpoint = newCheckPoint.gameObject.name;
     }
 
     public void Respawn()

@@ -48,6 +48,16 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnMainMenu()
     {
+        StateDataController.checkpoint = null;
+        StateDataController.isFruitEaten_1 = false;
+        StateDataController.isFruitEaten_2 = false;
+        StateDataController.isFruitEaten_3 = false;
+        StateDataController.isFruitEaten_4 = false;
+        StateDataController.isFruitEaten_5 = false;
+        StateDataController.isFruitEaten_6 = false;
+        StateDataController.isFruitEaten_7 = false;
+        Time.timeScale = 1;
+        gameIsPaused = false;
         SceneManager.LoadScene(0);
     }
 }
